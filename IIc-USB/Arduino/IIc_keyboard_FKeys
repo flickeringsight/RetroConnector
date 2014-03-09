@@ -206,12 +206,12 @@ void loop()
    // Only do something if the pin is different from previous state.
    if ( (CAPSState!=digitalRead(CAPSPin)) && !resetCapsLock) {
        CAPSState = digitalRead(CAPSPin);    // Remember new CAPSState.
-       //Keyboard.set_key6(KEY_CAPS_LOCK);    // Send KEY_CAPS_LOCK.
+       Keyboard.set_key6(KEY_CAPS_LOCK);    // Send KEY_CAPS_LOCK.
        dTime = millis();                    // Reset delay timer.
        resetCapsLock = true;
    }
    if ( resetCapsLock && (millis()-dTime) > 1)  {
-       //Keyboard.set_key6(KEY_CAPS_UNLOCK);
+       Keyboard.set_key6(KEY_CAPS_UNLOCK);
        resetCapsLock = false;
    }
    
